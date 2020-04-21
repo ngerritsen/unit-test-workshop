@@ -1,0 +1,21 @@
+{
+  "name": "unit-test-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently 'parcel watch src/index.html --out-dir public' 'nodemon server.js --watch server.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "jest": "^25.3.0",
+    "nodemon": "^2.0.3",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "shortid": "^2.2.15"
+  }
+}
