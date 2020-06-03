@@ -4,19 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently 'parcel watch src/index.html --out-dir public' 'nodemon server.js --watch server.js'",
-    "test": "jest --watchAll"
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngerritsen/unit-test-workshop.git"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^5.1.0",
-    "jest": "^25.3.0",
-    "nodemon": "^2.0.3",
-    "parcel-bundler": "^1.12.4"
+  "bugs": {
+    "url": "https://github.com/ngerritsen/unit-test-workshop/issues"
   },
-  "dependencies": {
-    "express": "^4.17.1",
-    "shortid": "^2.2.15"
+  "homepage": "https://github.com/ngerritsen/unit-test-workshop#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "jest": "^26.0.1"
   }
 }

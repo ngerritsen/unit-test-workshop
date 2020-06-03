@@ -1,5 +1,2 @@
-node_modules
-public
-todos.json
 .cache
-dist
+node_modules
