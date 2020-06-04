@@ -1,0 +1,30 @@
+<title>Dice game</title>
+
+<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+
+<style>
+.container {
+    max-width: 1000px;
+    margin-top: 24px;
+};
+</style>
+
+<div class="container">
+    <h1>Dice game</h1>
+
+    <div class="columns">
+        <div class="column col-6 js-dice-game">
+            <h2>Game</h2>
+            <p class="js-result">Roll the dice...</p>
+            <button class="btn btn-primary js-play">Roll the dice</button>
+        </div>
+
+        <div class="column col-6 js-score-board">
+            <h2>Scoreboard</h2>
+            <p class="js-score"></p>
+            <button class="btn btn-error js-reset">Reset</button>
+        </div>
+    </div>
+</div>
+
+<script src="./index.js"></script>

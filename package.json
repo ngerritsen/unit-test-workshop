@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel src/index.html"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,8 @@
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
-    "jest": "^26.0.1"
+    "flush-promises": "^1.0.2",
+    "jest": "^26.0.1",
+    "parcel-bundler": "^1.12.4"
   }
 }
