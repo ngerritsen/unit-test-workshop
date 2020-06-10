@@ -3,7 +3,7 @@ import game, { WINNING_NUMBER } from '../game';
 beforeEach(() => {
   document.body.innerHTML = `
     <div class="js-dice-game">
-      <p class="js-result">Roll the dice...</p>
+      <p class="js-result">Roll the dice.</p>
       <button class="js-play">Roll the dice</button>
     </div>
   `;

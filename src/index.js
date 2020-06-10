@@ -1,4 +1,5 @@
 import game from './components/game';
+import gameAsync from './components/gameAsync';
 import scoreBoard from './components/scoreBoard';
 
 game(document.querySelector('.js-dice-game'));

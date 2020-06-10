@@ -3,7 +3,7 @@ import gameAsync, { WINNING_NUMBER } from '../gameAsync';
 beforeEach(() => {
   document.body.innerHTML = `
     <div class="js-dice-game">
-      <p class="js-result">Roll the dice...</p>
+      <p class="js-result">Roll the dice.</p>
       <button class="js-play">Roll the dice</button>
     </div>
   `;
@@ -11,11 +11,11 @@ beforeEach(() => {
   gameAsync(document.querySelector('.js-dice-game'));
 });
 
-test('If dice rolls 6, shows winning message.', () => {
+test('If dice rolls 6, shows waiting message, then shows winning message.', () => {
   // Hint: we cannot trust the dice.
 });
 
-test('If dice does not roll 6, shows losing message.', () => {
+test('If dice does not roll 6, shows waiting message, then shows losing message.', () => {
 });
 
 test('If won, increments the score.', () => {

@@ -10,6 +10,8 @@ export default function gameAsync(element) {
   }
 
   function play() {
+    setResultText('Rolling the dice...');
+
     setTimeout(() => {
       dice.rollAsync()
         .then(handleResult);
