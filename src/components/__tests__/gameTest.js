@@ -1,4 +1,7 @@
 import game from '../game';
+import * as dice from '../../helpers/dice';
+
+jest.mock('../../helpers/dice');
 
 beforeEach(() => {
   document.body.innerHTML = `
@@ -28,6 +31,20 @@ test('If won, increments the score only once.', () => {
 
 test('If lost, does not increment the score.', () => {
 });
+
+describe('Async', () => {
+  beforeEach(() => {
+    game(document.querySelector('.js-dice-game'), { async: true });
+  });
+ 
+  test('Shows the waiting message, then shows winning message.', () => {
+      // Hint: don't use real timeouts in tests.
+  });
+});
+
+function getResultText() {
+  return document.querySelector('.js-result').textContent;
+}
 
 function clickPlay() {
   document.querySelector('.js-play').click();

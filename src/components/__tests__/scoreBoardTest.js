@@ -23,6 +23,10 @@ test('Updates the score when it has been updated.', () => {
   // Hint: to mock or not to mock?
 });
 
+function getScore() {
+  return document.querySelector('.js-score').textContent;
+}
+
 function clickReset() {
   document.querySelector('.js-play').click();
 }
