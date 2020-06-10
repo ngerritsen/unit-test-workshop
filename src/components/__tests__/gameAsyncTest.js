@@ -1,4 +1,4 @@
-import game, { WINNING_NUMBER } from '../game';
+import gameAsync, { WINNING_NUMBER } from '../gameAsync';
 
 beforeEach(() => {
   document.body.innerHTML = `
@@ -8,7 +8,7 @@ beforeEach(() => {
     </div>
   `;
 
-  game(document.querySelector('.js-dice-game'));
+  gameAsync(document.querySelector('.js-dice-game'));
 });
 
 test('If dice rolls 6, shows winning message.', () => {

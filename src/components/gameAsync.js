@@ -4,13 +4,16 @@ import * as scoreService from '../services/scoreService';
 const ROLL_TIME = 1000;
 export const WINNING_NUMBER = 6;
 
-export default function game(element) {
+export default function gameAsync(element) {
   function init() {
     element.querySelector('.js-play').addEventListener('click', play);
   }
 
   function play() {
-    handleResult(dice.roll());
+    setTimeout(() => {
+      dice.rollAsync()
+        .then(handleResult);
+    }, ROLL_TIME);
   }
 
   function handleResult(result) {
