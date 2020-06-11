@@ -12,7 +12,7 @@ beforeEach(() => {
 });
 
 test('If dice rolls 6, shows waiting message, then shows winning message.', () => {
-  // Hint: we cannot trust the dice.
+  // Hint: there are two async effects at play that need to be dealt with!
 });
 
 test('If dice does not roll 6, shows waiting message, then shows losing message.', () => {
