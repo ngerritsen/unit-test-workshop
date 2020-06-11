@@ -28,5 +28,5 @@ function getScore() {
 }
 
 function clickReset() {
-  document.querySelector('.js-play').click();
+  document.querySelector('.js-reset').click();
 }
