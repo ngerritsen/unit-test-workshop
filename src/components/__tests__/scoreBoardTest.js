@@ -1,4 +1,8 @@
 import scoreBoard from '../scoreBoard';
+import * as pubSub from '../../helpers/pubSub';
+import * as scoreService from '../../services/scoreService';
+
+jest.mock('../../services/scoreService');
 
 beforeEach(() => {
   document.body.innerHTML = `
@@ -8,19 +12,25 @@ beforeEach(() => {
     </div>
   `;
 
+  scoreService.getScore.mockReturnValue(4);
+
   scoreBoard(document.querySelector('.js-score-board'));
 });
 
 test('Intially sets the score to the value returned by the score service.', () => {
-  // Hint: who was first, the chicken or the egg?
+  expect(getScore()).toBe('Score: 4');
 });
 
-test('Clicking reset will reset the score.', () => {
-  // Hint: should be easy for you now
+test('Clicking reset will reset the score at the score service.', () => {
+  clickReset();
+
+  expect(scoreService.reset).toHaveBeenCalled();
 });
 
 test('Updates the score when it has been updated.', () => {
-  // Hint: to mock or not to mock?
+  pubSub.publish('score.updated', 3);
+
+  expect(getScore()).toBe('Score: 3');
 });
 
 function getScore() {

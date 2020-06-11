@@ -1,4 +1,9 @@
 import game, { WINNING_NUMBER } from '../game';
+import * as dice from '../../helpers/dice';
+import * as scoreService from '../../services/scoreService';
+
+jest.mock('../../helpers/dice');
+jest.mock('../../services/scoreService');
 
 beforeEach(() => {
   document.body.innerHTML = `
@@ -9,24 +14,48 @@ beforeEach(() => {
   `;
 
   game(document.querySelector('.js-dice-game'));
+
+  jest.resetAllMocks();
 });
 
 test('If dice rolls 6, shows winning message.', () => {
-  // Hint: we cannot trust the dice.
+  dice.roll.mockReturnValue(6);
+
+  clickPlay();
+
+  expect(getResultText()).toBe('6, you won!');
 });
 
 test('If dice does not roll 6, shows losing message.', () => {
+  dice.roll.mockReturnValue(5);
+
+  clickPlay();
+
+  expect(getResultText()).toBe('5, you lost!');
 });
 
 test('If won, increments the score.', () => {
-  // Hint: keep an eye on the score service...
+  dice.roll.mockReturnValue(6);
+
+  clickPlay();
+
+  expect(scoreService.increment).toHaveBeenCalled();
 });
 
 test('If won, increments the score only once.', () => {
-  // Hint: when does a mock... die?
+  dice.roll.mockReturnValue(6);
+
+  clickPlay();
+
+  expect(scoreService.increment).toHaveBeenCalledTimes(1);
 });
 
 test('If lost, does not increment the score.', () => {
+  dice.roll.mockReturnValue(5);
+
+  clickPlay();
+
+  expect(scoreService.increment).not.toHaveBeenCalled();
 });
 
 function getResultText() {
