@@ -11,7 +11,7 @@ beforeEach(() => {
   scoreBoard(document.querySelector('.js-score-board'));
 });
 
-test('Intially sets the score to the correct value.', () => {
+test('Intially sets the score to the value returned by the score service.', () => {
   // Hint: who was first, the chicken or the egg?
 });
 
